@@ -174,13 +174,11 @@ class _WeatherPainter extends CustomPainter {
     final cy = size.height * 0.45;
     final scale = sunScale.value;
 
-    // Outer glow
     final glowPaint = Paint()
       ..color = theme.primaryColor.withOpacity(0.2)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 30);
     canvas.drawCircle(Offset(cx, cy), 65 * scale, glowPaint);
 
-    // Sun rays
     final rayPaint = Paint()
       ..color = theme.secondaryColor.withOpacity(0.7)
       ..strokeWidth = 3
@@ -196,7 +194,6 @@ class _WeatherPainter extends CustomPainter {
       );
     }
 
-    // Sun body
     final sunPaint = Paint()
       ..shader = RadialGradient(
         colors: [theme.secondaryColor, theme.primaryColor],

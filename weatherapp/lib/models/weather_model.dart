@@ -61,7 +61,6 @@ class WeatherData {
     );
   }
 
-  /// Returns a WeatherCondition enum based on the main condition string
   WeatherCondition get condition {
     switch (mainCondition.toLowerCase()) {
       case 'clear':

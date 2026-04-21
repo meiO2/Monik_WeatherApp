@@ -6,7 +6,6 @@ import '../models/weather_model.dart';
 class WeatherService {
   static const String _baseUrl = 'https://api.openweathermap.org/data/2.5';
 
-  // API key is loaded from .env file — never hardcode it here
   String get _apiKey {
     final key = dotenv.env['OPENWEATHER_API_KEY'];
     if (key == null || key.isEmpty || key == 'your_api_key_here') {
@@ -26,7 +25,6 @@ class WeatherService {
     return _handleResponse(response);
   }
 
-  /// Fetch weather by geographic coordinates
   Future<WeatherData> getWeatherByCoords(
       double lat, double lon) async {
     final url = Uri.parse(
